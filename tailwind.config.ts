@@ -18,6 +18,11 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'playfair': ['Playfair Display', 'serif'],
+				'dancing': ['Dancing Script', 'cursive'],
+				'inter': ['Inter', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -63,21 +68,25 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				// Birthday theme colors
-				'rose-gold': 'hsl(var(--rose-gold))',
-				'soft-pink': 'hsl(var(--soft-pink))',
+				'rose-pink': 'hsl(var(--rose-pink))',
+				'baby-pink': 'hsl(var(--baby-pink))',
+				'orange-red': 'hsl(var(--orange-red))',
+				'deep-red': 'hsl(var(--deep-red))',
 				'cream': 'hsl(var(--cream))',
-				'deep-rose': 'hsl(var(--deep-rose))',
-				'gold': 'hsl(var(--gold))'
+				'coral': 'hsl(var(--coral))'
 			},
 			backgroundImage: {
 				'gradient-romantic': 'var(--gradient-romantic)',
 				'gradient-soft': 'var(--gradient-soft)',
-				'gradient-celebration': 'var(--gradient-celebration)'
+				'gradient-celebration': 'var(--gradient-celebration)',
+				'gradient-passion': 'var(--gradient-passion)',
+				'gradient-sunset': 'var(--gradient-sunset)'
 			},
 			boxShadow: {
 				'romantic': 'var(--shadow-romantic)',
 				'soft': 'var(--shadow-soft)',
-				'celebration': 'var(--shadow-celebration)'
+				'celebration': 'var(--shadow-celebration)',
+				'passion': 'var(--shadow-passion)'
 			},
 			transitionTimingFunction: {
 				'romantic': 'var(--transition-romantic)',

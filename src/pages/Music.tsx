@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import Navigation from '@/components/Navigation';
+import MusicPlayer from '@/components/MusicPlayer';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Play, Pause, Heart, Music as MusicIcon, Volume2 } from 'lucide-react';
+import { Play, Pause, Heart, Music as MusicIcon, Volume2, Download } from 'lucide-react';
 
 const Music = () => {
   const [currentSong, setCurrentSong] = useState<number | null>(null);
@@ -15,7 +16,9 @@ const Music = () => {
       artist: "Ed Sheeran",
       dedication: "Because you're perfect to me in every way 💕",
       lyrics: "I found a love for me, darling just dive right in...",
-      color: "from-rose-gold to-soft-pink"
+      color: "from-rose-pink to-baby-pink",
+      url: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav", // Demo URL
+      duration: 180
     },
     {
       id: 2,
@@ -23,7 +26,9 @@ const Music = () => {
       artist: "John Legend",
       dedication: "You have all of me, my heart and soul ❤️",
       lyrics: "All of me loves all of you, love your curves and all your edges...",
-      color: "from-deep-rose to-rose-gold"
+      color: "from-deep-red to-rose-pink",
+      url: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav", // Demo URL
+      duration: 209
     },
     {
       id: 3,
@@ -31,7 +36,9 @@ const Music = () => {
       artist: "Ed Sheeran",
       dedication: "Growing old with you is my greatest dream 💫",
       lyrics: "When your legs don't work like they used to before...",
-      color: "from-gold to-cream"
+      color: "from-coral to-cream",
+      url: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav", // Demo URL
+      duration: 281
     },
     {
       id: 4,
@@ -39,7 +46,9 @@ const Music = () => {
       artist: "Adele",
       dedication: "I'd do anything to make you feel my love across the distance 🌙",
       lyrics: "When the rain is blowing in your face...",
-      color: "from-soft-pink to-deep-rose"
+      color: "from-baby-pink to-deep-red",
+      url: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav", // Demo URL
+      duration: 267
     },
     {
       id: 5,
@@ -47,7 +56,9 @@ const Music = () => {
       artist: "Christina Perri",
       dedication: "I'll love you for a thousand years and more 💖",
       lyrics: "Heart beats fast, colors and promises...",
-      color: "from-cream to-gold"
+      color: "from-cream to-coral",
+      url: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav", // Demo URL
+      duration: 285
     },
     {
       id: 6,
@@ -55,16 +66,38 @@ const Music = () => {
       artist: "Four Tops",
       dedication: "I can't help but love you more each day 🎵",
       lyrics: "Sugar pie honey bunch, you know that I love you...",
-      color: "from-rose-gold to-cream"
+      color: "from-rose-pink to-cream",
+      url: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav", // Demo URL
+      duration: 174
     }
   ];
 
+  const handlePlay = (songId: number) => {
+    setCurrentSong(songId);
+    setIsPlaying(true);
+  };
+
+  const handlePause = () => {
+    setIsPlaying(false);
+  };
+
+  const handleNext = () => {
+    const currentIndex = ourPlaylist.findIndex(song => song.id === currentSong);
+    const nextIndex = (currentIndex + 1) % ourPlaylist.length;
+    setCurrentSong(ourPlaylist[nextIndex].id);
+  };
+
+  const handlePrevious = () => {
+    const currentIndex = ourPlaylist.findIndex(song => song.id === currentSong);
+    const prevIndex = currentIndex === 0 ? ourPlaylist.length - 1 : currentIndex - 1;
+    setCurrentSong(ourPlaylist[prevIndex].id);
+  };
+
   const togglePlay = (songId: number) => {
     if (currentSong === songId && isPlaying) {
-      setIsPlaying(false);
+      handlePause();
     } else {
-      setCurrentSong(songId);
-      setIsPlaying(true);
+      handlePlay(songId);
     }
   };
 
@@ -78,11 +111,11 @@ const Music = () => {
       <div className="pt-16">
         <div className="container mx-auto px-4 py-8">
           <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-romantic bg-clip-text text-transparent mb-4 animate-pulse-heart">
+            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-romantic bg-clip-text text-transparent mb-4 animate-pulse-heart font-playfair">
               Our Love Playlist 🎵
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Every song that reminds me of you and our beautiful love story
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-inter">
+              Every song that reminds me of you and our beautiful love story. Click to play and listen together! 🎶
             </p>
           </div>
 
@@ -184,24 +217,16 @@ const Music = () => {
             </div>
           </div>
 
-          {/* Music Player Controls */}
-          <div className="fixed bottom-6 right-6 z-50">
-            <Card className="p-4 shadow-celebration glass">
-              <div className="flex items-center space-x-3">
-                <MusicIcon className="w-6 h-6 text-primary" />
-                <div className="text-sm">
-                  {isPlaying ? (
-                    <div>
-                      <div className="font-medium text-primary">Now Playing</div>
-                      <div className="text-muted-foreground">{getCurrentSong()?.title}</div>
-                    </div>
-                  ) : (
-                    <div className="text-muted-foreground">Click any song to play</div>
-                  )}
-                </div>
-              </div>
-            </Card>
-          </div>
+          {/* Enhanced Music Player */}
+          <MusicPlayer
+            songs={ourPlaylist}
+            currentSongId={currentSong}
+            isPlaying={isPlaying}
+            onPlay={handlePlay}
+            onPause={handlePause}
+            onNext={handleNext}
+            onPrevious={handlePrevious}
+          />
 
           {/* Love Message */}
           <div className="mt-12 text-center glass p-8 rounded-2xl max-w-2xl mx-auto">

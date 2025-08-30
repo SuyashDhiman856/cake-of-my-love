@@ -13,8 +13,11 @@ const Navigation = () => {
     { path: '/love-letter', label: 'Love Letter', icon: Mail },
     { path: '/memories', label: 'Our Memories', icon: Camera },
     { path: '/gifts', label: 'Virtual Gifts', icon: Gift },
-    { path: '/rating', label: 'Rate Me', icon: Star },
     { path: '/music', label: 'Our Songs', icon: Music },
+    { path: '/messages', label: 'Special Messages', icon: Heart },
+    { path: '/countdown', label: 'Countdown', icon: Clock },
+    { path: '/virtual-date', label: 'Virtual Date', icon: Coffee },
+    { path: '/rating', label: 'Rate Me', icon: Star },
   ];
 
   return (

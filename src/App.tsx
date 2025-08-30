@@ -10,6 +10,9 @@ import Memories from "./pages/Memories";
 import Gifts from "./pages/Gifts";
 import Rating from "./pages/Rating";
 import Music from "./pages/Music";
+import SpecialMessages from "./pages/SpecialMessages";
+import Countdown from "./pages/Countdown";
+import VirtualDate from "./pages/VirtualDate";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +31,9 @@ const App = () => (
           <Route path="/gifts" element={<Gifts />} />
           <Route path="/rating" element={<Rating />} />
           <Route path="/music" element={<Music />} />
+          <Route path="/messages" element={<SpecialMessages />} />
+          <Route path="/countdown" element={<Countdown />} />
+          <Route path="/virtual-date" element={<VirtualDate />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

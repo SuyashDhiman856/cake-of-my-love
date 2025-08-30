@@ -18,18 +18,18 @@ All colors MUST be HSL.
     --popover: 353 23% 96%;
     --popover-foreground: 340 11% 15%;
 
-    /* Rose Gold & Pink Palette */
-    --primary: 342 44% 70%;
+    /* Rose Pink, Orange, Red & Baby Pink Palette */
+    --primary: 342 84% 65%; /* Rose Pink */
     --primary-foreground: 354 31% 98%;
 
-    --secondary: 346 25% 90%;
+    --secondary: 346 100% 92%; /* Baby Pink */
     --secondary-foreground: 340 30% 35%;
 
     --muted: 346 20% 94%;
     --muted-foreground: 340 8% 55%;
 
-    --accent: 43 74% 79%;
-    --accent-foreground: 340 30% 25%;
+    --accent: 15 95% 68%; /* Orange-Red */
+    --accent-foreground: 354 31% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -39,21 +39,25 @@ All colors MUST be HSL.
     --ring: 342 44% 70%;
 
     /* Custom Birthday Theme Variables */
-    --rose-gold: 342 44% 70%;
-    --soft-pink: 346 25% 90%;
+    --rose-pink: 342 84% 65%;
+    --baby-pink: 346 100% 92%;
+    --orange-red: 15 95% 68%;
+    --deep-red: 0 85% 60%;
     --cream: 354 31% 98%;
-    --deep-rose: 340 50% 60%;
-    --gold: 43 74% 79%;
+    --coral: 12 88% 70%;
     
     /* Gradients */
-    --gradient-romantic: linear-gradient(135deg, hsl(var(--rose-gold)), hsl(var(--gold)));
-    --gradient-soft: linear-gradient(180deg, hsl(var(--cream)), hsl(var(--soft-pink)));
-    --gradient-celebration: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-romantic: linear-gradient(135deg, hsl(var(--rose-pink)), hsl(var(--coral)));
+    --gradient-soft: linear-gradient(180deg, hsl(var(--cream)), hsl(var(--baby-pink)));
+    --gradient-celebration: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--orange-red)));
+    --gradient-passion: linear-gradient(135deg, hsl(var(--deep-red)), hsl(var(--rose-pink)));
+    --gradient-sunset: linear-gradient(45deg, hsl(var(--orange-red)), hsl(var(--coral)));
     
     /* Shadows */
-    --shadow-romantic: 0 10px 30px -10px hsl(var(--rose-gold) / 0.3);
+    --shadow-romantic: 0 10px 30px -10px hsl(var(--rose-pink) / 0.4);
     --shadow-soft: 0 4px 20px -4px hsl(var(--primary) / 0.15);
-    --shadow-celebration: 0 0 40px hsl(var(--gold) / 0.4);
+    --shadow-celebration: 0 0 40px hsl(var(--orange-red) / 0.5);
+    --shadow-passion: 0 8px 25px -8px hsl(var(--deep-red) / 0.4);
     
     /* Animations */
     --transition-romantic: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -142,7 +146,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground overflow-x-hidden;
-    font-family: 'Inter', 'Georgia', serif;
+    font-family: 'Playfair Display', 'Dancing Script', 'Inter', serif;
   }
   
   /* Custom birthday animations */
