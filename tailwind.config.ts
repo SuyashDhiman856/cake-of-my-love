@@ -61,7 +61,27 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Birthday theme colors
+				'rose-gold': 'hsl(var(--rose-gold))',
+				'soft-pink': 'hsl(var(--soft-pink))',
+				'cream': 'hsl(var(--cream))',
+				'deep-rose': 'hsl(var(--deep-rose))',
+				'gold': 'hsl(var(--gold))'
+			},
+			backgroundImage: {
+				'gradient-romantic': 'var(--gradient-romantic)',
+				'gradient-soft': 'var(--gradient-soft)',
+				'gradient-celebration': 'var(--gradient-celebration)'
+			},
+			boxShadow: {
+				'romantic': 'var(--shadow-romantic)',
+				'soft': 'var(--shadow-soft)',
+				'celebration': 'var(--shadow-celebration)'
+			},
+			transitionTimingFunction: {
+				'romantic': 'var(--transition-romantic)',
+				'bounce': 'var(--transition-bounce)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
