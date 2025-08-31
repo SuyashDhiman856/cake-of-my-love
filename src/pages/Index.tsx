@@ -76,7 +76,7 @@ const Index = () => {
         <section className="container mx-auto px-4 py-12">
           <div className="text-center mb-12">
             <h1 className="text-5xl md:text-7xl font-bold bg-gradient-romantic bg-clip-text text-transparent mb-6 animate-pulse-heart">
-              Happy Birthday, My Love! 💕
+              Happy Birthday, My Diya! 💕🩷🙇‍♂️
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8">
               Even though we're miles apart, my love travels across every distance to celebrate you on your special day. 
