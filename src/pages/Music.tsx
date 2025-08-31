@@ -4,6 +4,7 @@ import MusicPlayer from '@/components/MusicPlayer';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Play, Pause, Heart, Music as MusicIcon, Volume2, Download } from 'lucide-react';
+import musics from '../musics';
 
 const Music = () => {
   const [currentSong, setCurrentSong] = useState<number | null>(null);
@@ -12,62 +13,62 @@ const Music = () => {
   const ourPlaylist = [
     {
       id: 1,
-      title: "Perfect",
-      artist: "Ed Sheeran",
+      title: "Tum Ho To (Saiyaara)",
+      artist: "Vishal Mishra, Hansika Pareek",
       dedication: "Because you're perfect to me in every way 💕",
       lyrics: "I found a love for me, darling just dive right in...",
       color: "from-rose-pink to-baby-pink",
-      url: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav", // Demo URL
+      url: `${musics.musics.TumHoTo}`, // Demo URL
       duration: 180
     },
     {
       id: 2,
-      title: "All of Me",
-      artist: "John Legend",
+      title: "I Love You Diya",
+      artist: "Ash King, Clinton Cerejo",
       dedication: "You have all of me, my heart and soul ❤️",
       lyrics: "All of me loves all of you, love your curves and all your edges...",
       color: "from-deep-red to-rose-pink",
-      url: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav", // Demo URL
+      url: `${musics.musics.ILoveYouDiya}`, // Demo URL
       duration: 209
     },
     {
       id: 3,
-      title: "Thinking Out Loud",
-      artist: "Ed Sheeran",
+      title: "Wanna Be Yours",
+      artist: "Arctic Monkeys",
       dedication: "Growing old with you is my greatest dream 💫",
       lyrics: "When your legs don't work like they used to before...",
       color: "from-coral to-cream",
-      url: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav", // Demo URL
+      url: `${musics.musics.WannaBeYours}`, // Demo URL
       duration: 281
     },
     {
       id: 4,
-      title: "Make You Feel My Love",
-      artist: "Adele",
+      title: "Raabta",
+      artist: "Shreya Ghoshal",
       dedication: "I'd do anything to make you feel my love across the distance 🌙",
       lyrics: "When the rain is blowing in your face...",
       color: "from-baby-pink to-deep-red",
-      url: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav", // Demo URL
+      url: `${musics.musics.Raabta}`, // Demo URL
       duration: 267
     },
     {
       id: 5,
-      title: "A Thousand Years",
-      artist: "Christina Perri",
+      title: "Tum Se Hi",
+      artist: "Mohit Chauhan",
       dedication: "I'll love you for a thousand years and more 💖",
       lyrics: "Heart beats fast, colors and promises...",
       color: "from-cream to-coral",
-      url: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav", // Demo URL
+      url: `${musics.musics.TumSeHi}`, // Demo URL
       duration: 285
     },
     {
       id: 6,
-      title: "Can't Help Myself",
-      artist: "Four Tops",
+      title: "Phir Kabhi",
+      artist: "Arijit Singh",
       dedication: "I can't help but love you more each day 🎵",
       lyrics: "Sugar pie honey bunch, you know that I love you...",
       color: "from-rose-pink to-cream",
-      url: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav", // Demo URL
+      url: `${musics.musics.PhirKabhi}`, // Demo URL
       duration: 174
     }
   ];

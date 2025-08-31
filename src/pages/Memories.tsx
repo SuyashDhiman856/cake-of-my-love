@@ -4,6 +4,18 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, Heart } from 'lucide-react';
 import coupleImage from '@/assets/couple-silhouette.jpg';
+import images from '../images';
+import SuyashDiyaFOREVER1 from '@/assets/SuyashDiyaFOREVER1.jpg';
+import SuyashDiyaFOREVER2 from '@/assets/SuyashDiyaFOREVER2.jpg';
+import SuyashDiyaFOREVER3 from '@/assets/SuyashDiyaFOREVER3.jpg';
+import SuyashDiyaFOREVER4 from '@/assets/SuyashDiyaFOREVER4.jpg';
+import SuyashDiyaFOREVER5 from '@/assets/SuyashDiyaFOREVER5.jpg';
+import SuyashDiyaFOREVER6 from '@/assets/SuyashDiyaFOREVER6.jpg';
+import SuyashDiyaFOREVER7 from '@/assets/SuyashDiyaFOREVER7.jpg';
+import SuyashDiyaFOREVER8 from '@/assets/SuyashDiyaFOREVER8.jpg';
+import SuyashDiyaFOREVER9 from '@/assets/SuyashDiyaFOREVER9.jpg';
+import SuyashDiyaFOREVER10 from '@/assets/SuyashDiyaFOREVER10.jpg';
+import SuyashDiyaFOREVER11 from '@/assets/SuyashDiyaFOREVER11.jpg';
 
 const Memories = () => {
   const [currentMemory, setCurrentMemory] = useState(0);
@@ -12,44 +24,79 @@ const Memories = () => {
   const memories = [
     {
       id: 1,
-      image: coupleImage,
-      title: "Our First Virtual Date",
-      description: "The night we talked until sunrise and I knew you were the one",
-      date: "That magical evening"
+      image: SuyashDiyaFOREVER1,
+      title: "Our First Birthday Together",
+      description: "Our First Celebration Together, The Most Perfect Day Ever.",
+      date: "29th August 2025"
     },
     {
       id: 2,
-      image: coupleImage,
-      title: "When You First Said 'I Love You'",
-      description: "My heart skipped a beat and the world felt perfect",
-      date: "The most beautiful moment"
+      image: SuyashDiyaFOREVER2,
+      title: "After So Many Obstacles, We are Together On The Day We Born",
+      description: "My heart skipped a beat and the world felt perfect.",
+      date: "29th August 2025"
     },
     {
       id: 3,
-      image: coupleImage,
-      title: "Our Weekend Together",
-      description: "Every second was precious, every moment a treasure",
-      date: "The best days of my life"
+      image: SuyashDiyaFOREVER3,
+      title: "The Again Surprise",
+      description: "Every second was precious, every moment a treasure.",
+      date: "21th August 2025"
     },
     {
       id: 4,
-      image: coupleImage,
-      title: "Morning Coffee Video Calls",
-      description: "Starting each day seeing your beautiful face",
-      date: "Every morning blessing"
+      image: SuyashDiyaFOREVER4,
+      title: "The Mother's Love",
+      description: "The Moment when you loved me like my Mother.",
+      date: "19th August 2025"
     },
     {
       id: 5,
-      image: coupleImage,
-      title: "Late Night Conversations",
+      image: SuyashDiyaFOREVER5,
+      title: "The Moment when we found the best compatible arms to hold each other",
       description: "Sharing our dreams, fears, and everything in between",
-      date: "When the world was ours"
+      date: "19th August 2025"
     },
     {
       id: 6,
-      image: coupleImage,
-      title: "Your Sleepy Voice",
-      description: "The adorable way you say goodnight that melts my heart",
+      image: SuyashDiyaFOREVER6,
+      title: "Khushi is finally so Happy",
+      description: "When she is so happy because of you, it makes you cry the tears of happiness.",
+      date: "19th August 2025"
+    },
+    {
+      id: 7,
+      image: SuyashDiyaFOREVER7,
+      title: "Our First Meet",
+      description: "The Day when the butterflies in my stomach flew away because I saw you.",
+      date: "2nd April 2025"
+    },
+    {
+      id: 8,
+      image: SuyashDiyaFOREVER8,
+      title: "Our First Date",
+      description: "The First Date with you was the most magical evening of my life.",
+      date: "16th April 2025"
+    },
+    {
+      id: 9,
+      image: SuyashDiyaFOREVER9,
+      title: "When We Fall In Love",
+      description: "The moment when it becomes mutual",
+      date: "2nd April 2025"
+    },
+    {
+      id: 10,
+      image: SuyashDiyaFOREVER10,
+      title: "When She Is happy",
+      description: "When his happiness totally depends on her Happiness",
+      date: "16th April 2025"
+    },
+    {
+      id: 11,
+      image: SuyashDiyaFOREVER11,
+      title: "When They are Together, Every Problem Seems Smaller",
+      description: "They Found Themselves When They Found Each Other",
       date: "Every precious evening"
     }
   ];

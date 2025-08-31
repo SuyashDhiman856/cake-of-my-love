@@ -4,6 +4,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Gift, Heart, Music, Camera, Mail, Sparkles } from 'lucide-react';
 import giftBoxImage from '@/assets/gift-box.jpg';
+import images from '../images';
 
 const Gifts = () => {
   const [openedGifts, setOpenedGifts] = useState<number[]>([]);
@@ -110,14 +111,18 @@ const Gifts = () => {
                   }`}
                   onClick={() => openGift(gift.id)}
                 >
-                  <div className={`h-40 bg-gradient-to-br ${gift.color} flex items-center justify-center relative overflow-hidden`}>
+                  <div style={{backgroundImage: `url(${images.images[`SuyashDiyaFOREVER${gift.id}` as keyof typeof images.images]})`,
+                  backgroundSize: 'cover',
+                  backgroundRepeat: 'no-repeat',
+                  backgroundPosition: 'center'}} className={`h-40 bg-gradient-to-br ${gift.color} flex items-center justify-center relative overflow-hidden`}>
+                    
                     {!isOpened ? (
-                      <div className="text-center text-white">
+                      <div className="text-center text-orange-600">
                         <Gift className="w-12 h-12 mx-auto mb-2 animate-bounce" />
                         <p className="text-sm font-medium">Click to Open!</p>
                       </div>
                     ) : (
-                      <div className="text-center text-white animate-scale-in">
+                      <div className="text-center text-orange-600 animate-scale-in">
                         <Icon className="w-12 h-12 mx-auto mb-2 animate-pulse-heart" />
                         <p className="text-sm font-medium">Opened! 💕</p>
                       </div>
@@ -129,7 +134,7 @@ const Gifts = () => {
                         {[...Array(6)].map((_, i) => (
                           <div
                             key={i}
-                            className="absolute w-2 h-2 bg-white rounded-full animate-sparkle"
+                            className="absolute w-2 h-2 bg-red-500 rounded-full animate-sparkle"
                             style={{
                               left: `${Math.random() * 100}%`,
                               top: `${Math.random() * 100}%`,

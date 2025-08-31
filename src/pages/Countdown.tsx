@@ -12,7 +12,7 @@ const Countdown = () => {
   });
 
   // Set your special date here (when you'll meet next)
-  const targetDate = new Date('2024-12-25T00:00:00').getTime(); // Christmas example
+  const targetDate = new Date('2025-09-01T08:00:00').getTime(); // Christmas example
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -88,8 +88,8 @@ const Countdown = () => {
             <Card className="overflow-hidden shadow-romantic">
               <div className="bg-gradient-to-r from-rose-pink to-baby-pink p-6 text-white">
                 <Calendar className="w-8 h-8 mb-4" />
-                <h3 className="text-xl font-semibold mb-2 font-playfair">Next Birthday</h3>
-                <div className="text-2xl font-bold font-playfair">45 Days</div>
+                <h3 className="text-xl font-semibold mb-2 font-playfair">My Cutu Birthday</h3>
+                <div className="text-2xl font-bold font-playfair">1st September</div>
                 <p className="text-sm opacity-90 font-inter">Your special day! 🎂</p>
               </div>
             </Card>
@@ -97,8 +97,8 @@ const Countdown = () => {
             <Card className="overflow-hidden shadow-romantic">
               <div className="bg-gradient-to-r from-deep-red to-rose-pink p-6 text-white">
                 <Heart className="w-8 h-8 mb-4" />
-                <h3 className="text-xl font-semibold mb-2 font-playfair">Anniversary</h3>
-                <div className="text-2xl font-bold font-playfair">127 Days</div>
+                <h3 className="text-xl font-semibold mb-2 font-playfair">Our Anniversary 🥹</h3>
+                <div className="text-2xl font-bold font-playfair">219 Days</div>
                 <p className="text-sm opacity-90 font-inter">Our love milestone! 💕</p>
               </div>
             </Card>
@@ -107,7 +107,7 @@ const Countdown = () => {
               <div className="bg-gradient-to-r from-coral to-cream p-6 text-white">
                 <MapPin className="w-8 h-8 mb-4" />
                 <h3 className="text-xl font-semibold mb-2 font-playfair">Dream Trip</h3>
-                <div className="text-2xl font-bold font-playfair">365 Days</div>
+                <div className="text-2xl font-bold font-playfair">Whenever You are Ready 😊</div>
                 <p className="text-sm opacity-90 font-inter">Our adventure awaits! ✈️</p>
               </div>
             </Card>
