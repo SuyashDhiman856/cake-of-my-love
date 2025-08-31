@@ -36,7 +36,7 @@ const LoveLetter = () => {
                   </div>
 
                   <div className="space-y-6 text-foreground leading-relaxed">
-                    <div className="text-2xl mb-6 text-primary font-medium">My Dearest Love,</div>
+                    <div className="text-2xl mb-6 text-primary font-medium">My Dearest Cutu Laddo 🩷🛐,</div>
 
                     <p>
                       As I sit here writing this letter, my heart overflows with emotions I struggle to put into words. Today marks another year of your beautiful existence in this world, and I am overwhelmed with gratitude for having you in my life. Distance may separate us physically, but our hearts beat as one, connected by an invisible thread of love that spans across continents and time zones.
