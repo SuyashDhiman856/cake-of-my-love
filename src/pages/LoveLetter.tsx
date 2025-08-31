@@ -59,7 +59,7 @@ const LoveLetter = () => {
                     </p>
 
                     <p>
-                      I love the way you scrunch your nose when you're concentrating, how you get excited about the little things in life, your passion for the things you care about, and the gentle way you handle my heart. I love your morning texts that start my day with a smile, your goodnight messages that help me sleep peacefully, and the way you say my name like it's your favorite word.
+                      I love the way you laugh when you are genuinely happy, how you get excited about the little things in life, your passion for the things you care about, and the gentle way you handle my heart. I love your morning texts that start my day with a smile, your goodnight messages that help me sleep peacefully, and the way you say my name like it's your favorite word.
                     </p>
 
                     <p>
