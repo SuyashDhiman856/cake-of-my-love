@@ -75,7 +75,7 @@ const createSliceGeometry = (radius: number, height: number, angle: number, segm
   return geometry;
 };
 
-// Professional Cake Component with PBR Materials
+// Professional Cake Component with PBR Materials (always visible)
 function Cake({ isHovered, onClick, isSliced, isSlicing, sliceAngle, radius, height }: CakeProps) {
   const meshRef = useRef<THREE.Group>(null);
   
@@ -204,8 +204,8 @@ function Cake({ isHovered, onClick, isSliced, isSlicing, sliceAngle, radius, hei
         </mesh>
       ))}
 
-      {/* Candles with flickering flames */}
-      {!isSliced && [...Array(7)].map((_, i) => (
+      {/* Candles with flickering flames - keep visible even when sliced */}
+      {[...Array(7)].map((_, i) => (
         <group 
           key={i} 
           position={[
@@ -226,23 +226,29 @@ function Cake({ isHovered, onClick, isSliced, isSlicing, sliceAngle, radius, hei
             <meshStandardMaterial color="#2C1810" />
           </mesh>
           
-          {/* Flame with animation */}
-          <FlameComponent />
+          {/* Flame with animation - extinguish gradually after cutting */}
+          <FlameComponent isSliced={isSliced} />
         </group>
       ))}
     </group>
   );
 }
 
-// Animated flame component
-function FlameComponent() {
+// Animated flame component with gradual extinguishing
+function FlameComponent({ isSliced }: { isSliced?: boolean }) {
   const flameRef = useRef<THREE.Mesh>(null);
   
   useFrame((state) => {
     if (flameRef.current && flameRef.current.material instanceof THREE.MeshStandardMaterial) {
-      const flicker = Math.sin(state.clock.elapsedTime * 10) * 0.1 + 1;
+      const baseFlicker = Math.sin(state.clock.elapsedTime * 10) * 0.1 + 1;
+      
+      // Gradually extinguish after cutting
+      const extinguishFactor = isSliced ? Math.max(0, 1 - (state.clock.elapsedTime * 0.1)) : 1;
+      const flicker = baseFlicker * extinguishFactor;
+      
       flameRef.current.scale.setScalar(flicker);
       flameRef.current.material.emissiveIntensity = flicker * 0.8;
+      flameRef.current.material.opacity = extinguishFactor;
     }
   });
 
@@ -745,18 +751,30 @@ const CakeScene = () => {
             far={4.5}
           />
           
-          {/* Celebratory text */}
+          {/* Celebratory text with enhanced styling */}
           {isSliced && (
-            <Text
-              position={[0, 3, 0]}
-              fontSize={0.6}
-              color="#DC143C"
-              anchorX="center"
-              anchorY="middle"
-              font="/fonts/PlayfairDisplay-Bold.woff"
-            >
-              Happy Birthday, My Love! 💕
-            </Text>
+            <group>
+              <Text
+                position={[0, 3.5, 0]}
+                fontSize={0.8}
+                color="#DC143C"
+                anchorX="center"
+                anchorY="middle"
+                font="/fonts/PlayfairDisplay-Bold.woff"
+              >
+                🎉 Happy Birthday! 🎉
+              </Text>
+              <Text
+                position={[0, 2.8, 0]}
+                fontSize={0.4}
+                color="#FF69B4"
+                anchorX="center"
+                anchorY="middle"
+                font="/fonts/DancingScript-Bold.woff"
+              >
+                Made with all my love for you! 💕
+              </Text>
+            </group>
           )}
         </Suspense>
       </Canvas>
@@ -766,9 +784,9 @@ const CakeScene = () => {
         <div className="glass p-6 rounded-3xl text-center shadow-celebration border border-white/20">
           <h3 className="text-xl font-semibold mb-4 text-primary font-playfair">
             {isSlicing ? (
-              <>Cutting the Cake... 🔪 ({Math.round(animationProgress * 100)}%)</>
+              <>Cutting your special cake... 🔪 ({Math.round(animationProgress * 100)}%)</>
             ) : isSliced ? (
-              "Perfect Slice! 🎉"
+              "🎂 Happy Birthday! Your cake is ready! 🎉"
             ) : (
               "Cut Your Birthday Cake Together! 🎂"
             )}
@@ -785,9 +803,9 @@ const CakeScene = () => {
               className="bg-gradient-romantic text-white shadow-romantic hover:shadow-celebration transition-all duration-500 font-dancing text-lg px-8 py-3 transform hover:scale-105"
             >
               {isSlicing ? (
-                <>Cutting... 🔪✨</>
+                <>Cutting with love... 🔪✨</>
               ) : isSliced ? (
-                "Beautifully Cut! 💕"
+                "🎉 Happy Birthday, My Love! 🎉"
               ) : (
                 "Cut the Birthday Cake! 🔪"
               )}
@@ -801,10 +819,13 @@ const CakeScene = () => {
                 variant="outline"
                 className="border-primary text-primary hover:bg-primary/10 font-dancing"
               >
-                Cut Another Slice 🎂
+                🎂 Cut Another Slice
               </Button>
-              <p className="text-sm text-muted-foreground font-inter">
-                Made with love, just for you ❤️
+              <p className="text-sm text-muted-foreground font-inter animate-pulse">
+                🎊 Wishing you the happiest birthday ever! 🎊
+              </p>
+              <p className="text-xs text-rose-pink font-dancing">
+                Made with endless love, just for you ❤️
               </p>
             </div>
           )}
