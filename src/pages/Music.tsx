@@ -28,7 +28,7 @@ const Music = () => {
       dedication: "You have all of me, my heart and soul ❤️",
       lyrics: "All of me loves all of you, love your curves and all your edges...",
       color: "from-deep-red to-rose-pink",
-      url: `${musics.musics.ILoveYouDiya}`, // Demo URL
+      url: "#", // Demo URL
       duration: 209
     },
     {
