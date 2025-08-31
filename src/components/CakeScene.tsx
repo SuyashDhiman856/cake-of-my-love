@@ -366,6 +366,11 @@ function Knife({ position, visible, isSlicing, animationProgress }: KnifeProps) 
 function CakeSlice({ visible, radius, height, angle, animationProgress }: SliceProps) {
   const sliceRef = useRef<THREE.Group>(null);
   
+  // Always call hooks - move before conditional returns
+  const sliceGeometry = useMemo(() => createSliceGeometry(radius, height, angle), [radius, height, angle]);
+  const crumbGeometry = useMemo(() => createSliceGeometry(radius - 0.1, height * 0.05, angle), [radius, height, angle]);
+  const topCrumbGeometry = useMemo(() => createSliceGeometry(radius * 0.7, height * 0.05, angle), [radius, height, angle]);
+  
   useFrame(() => {
     if (sliceRef.current && visible && animationProgress > 0) {
       // Multi-stage animation: lift, tilt, move out
@@ -387,9 +392,8 @@ function CakeSlice({ visible, radius, height, angle, animationProgress }: SliceP
     }
   });
 
+  // Conditional rendering after all hooks
   if (!visible) return null;
-
-  const sliceGeometry = useMemo(() => createSliceGeometry(radius, height, angle), [radius, height, angle]);
 
   return (
     <group ref={sliceRef} position={[0, -0.5, 0]}>
@@ -399,11 +403,11 @@ function CakeSlice({ visible, radius, height, angle, animationProgress }: SliceP
       </mesh>
       
       {/* Cream layers visible in cross-section */}
-      <mesh position={[0, height * 0.25, 0]} geometry={createSliceGeometry(radius - 0.1, height * 0.05, angle)}>
+      <mesh position={[0, height * 0.25, 0]} geometry={crumbGeometry}>
         <meshStandardMaterial color="#FFFACD" roughness={0.3} />
       </mesh>
       
-      <mesh position={[0, height * 0.55, 0]} geometry={createSliceGeometry(radius * 0.7, height * 0.05, angle)}>
+      <mesh position={[0, height * 0.55, 0]} geometry={topCrumbGeometry}>
         <meshStandardMaterial color="#FFFACD" roughness={0.3} />
       </mesh>
       
