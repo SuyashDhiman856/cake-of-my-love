@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Heart, Cake, Mail, Camera, Gift, Star, Music } from 'lucide-react';
+import { Heart, Cake, Mail, Camera, Gift, Star, Music, Clock, Coffee } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navigation = () => {
