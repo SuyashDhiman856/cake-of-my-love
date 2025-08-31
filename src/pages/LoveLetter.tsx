@@ -89,7 +89,7 @@ const LoveLetter = () => {
                     <div className="text-right mt-12">
                       <div className="text-xl font-medium text-primary">With all my love and endless devotion,</div>
                       <div className="text-2xl font-bold bg-gradient-romantic bg-clip-text text-transparent mt-4">
-                        Your Devoted Partner ❤️
+                        Yours Suyash ❤️
                       </div>
                       <div className="text-sm text-muted-foreground mt-2 italic">
                         Forever yours, across every mile and through every season
